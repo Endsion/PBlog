@@ -1,9 +1,401 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title></title>
+	<meta name="keywords" content="Endsion,blog,markdown,laravel,博客,laravel博客,php7 博客,开源博客,laravel blog">
+	<meta name="description" content="Endsion Blog 是一个基于Laravel开发，支持markdown语法开源的个人技术博客。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/base.css" rel="stylesheet">
+	<link href="css/index_new.css" rel="stylesheet">
+	<link href="css/m.css" rel="stylesheet">
+	<style>
+    	.pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}
+    	.pagination>li{display:inline}
+    	.pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#337ab7;text-decoration:none;background-color:#fff;border:1px solid #ddd}
+    	.pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}
+    	.pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}
+    	.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{z-index:2;color:#23527c;background-color:#eee;border-color:#ddd}
+    	.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{z-index:3;color:#fff;cursor:default;background-color:#337ab7;border-color:#337ab7}
+    	.pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover{color:#777;cursor:not-allowed;background-color:#fff;border-color:#ddd}
+    	.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px;line-height:1.3333333}
+    	.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-top-left-radius:6px;border-bottom-left-radius:6px}
+    	.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-top-right-radius:6px;border-bottom-right-radius:6px}
+    	.pagination-sm>li>a,.pagination-sm>li>span{padding:5px 10px;font-size:12px;line-height:1.5}
+    	.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{border-top-left-radius:3px;border-bottom-left-radius:3px}
+    	.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-top-right-radius:3px;border-bottom-right-radius:3px}
+    	.pager{padding-left:0;margin:20px 0;text-align:center;list-style:none}
+    </style>
+    <style>
+        #cnzz_stat_icon_1264398044{
+            display: inline-block;
+        }
+        h2{
+            margin-top: 0;
+        }
+    </style>
+</style>
 </head>
 <body>
-
+	<header>
+	    <!--menu begin-->
+	    <div class="menu">
+		    <nav class="nav" id="topnav">
+		        <h1 class="logo"><a href="http://blog.kesixin.xin">Mamba Blog</a></h1>
+	            <li><a href="http://blog.kesixin.xin" id="topnav_current">首页</a> </li>
+	            <li><a href="http://blog.kesixin.xin/category/17">PHP</a> </li>
+	            <li><a href="http://blog.kesixin.xin/category/15">后端</a> </li>
+	            <li><a href="http://blog.kesixin.xin/category/16">前端</a> </li>
+	            <li><a href="http://blog.kesixin.xin/article/select">时间轴</a> </li>
+	            <li><a href="http://blog.kesixin.xin/page/code">博客安装</a> </li>
+	            <li><a href="http://blog.kesixin.xin/about">关于</a> </li>
+		                            <!--search begin-->
+		        <div id="search_bar" class="search_bar">
+		            <form id="searchform" action="http://blog.kesixin.xin/search" method="get" name="searchform">
+		                <input class="input" placeholder="想搜点什么呢..." type="text" name="keyword" id="keyboard">
+		                <input type="hidden" name="Submit" value="搜索">
+		                <span class="search_ico"></span>
+		            </form>
+		        </div>
+		        <!--search end-->
+		    </nav>
+		</div>
+		<!--mnav begin-->
+		<div id="mnav">
+		    <h2><a href="http://blog.kesixin.xin" class="mlogo">Mamba Blog</a><span class="navicon"></span></h2>
+		    <dl class="list_dl">
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin">首页</a> </dt>
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin/category/17">PHP</a> </dt>
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin/category/15">后端</a> </dt>
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin/category/16">前端</a> </dt>
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin/article/select">时间轴</a> </dt>
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin/page/code">博客安装</a> </dt>
+	            <dt class="list_dt"> <a href="http://blog.kesixin.xin/about">关于</a> </dt>
+	        </dl>
+		</div>
+		<!--mnav end-->
+		<!--menu end-->
+	</header>
+	<article>
+    	<div class="blogsbox">
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+            	<h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/62">PHP 开发新版个人博客</a></h3>
+            	<span class="blogpic"><a href="http://blog.kesixin.xin/article/62" title=""><img src="https://upload-images.jianshu.io/upload_images/6673460-700ddde9436057fe.jpg" style="height: 120px;" alt=""></a></span>
+            	<p class="blogtext">基于Laravel5.2开发，依赖开源程序，支持markdown语法编辑文章，完善的系统管理后台，能够快速搭建个人博客！功能包括：markdown文章编辑器，文章发布，时间轴，浏览数统计，文章分类 ，文章标签，导航栏自定义，文章评论，关键词搜索功能，系统基本设置，友情链接，文件上传管理。 </p>
+            	<div class="bloginfo">
+                	<ul>
+                    	<li class="author"><a>Mamba</a></li>
+                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+                        <li class="timer">2018-05-28</li>
+                    	<li class="view"><span>397</span> </li>
+                    	<li class="comment">5</li>
+                	</ul>
+            	</div>
+        	</div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/61">Git 速查表</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/61" title=""><img src="https://upload-images.jianshu.io/upload_images/6673460-3a67ea892505a697.png" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-03-30</li>
+	                    <li class="view"><span>830</span> </li>
+	                    <li class="comment">11</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/60">（转载）二十岁出头，你一无所有，但你却拥有一切</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/60" title=""><img src="https://upload-images.jianshu.io/upload_images/6673460-17b4ee69ac1edae0.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">二十岁出头，你一无所有，但你却拥有一切，因为你还有牛逼的梦想。可那又怎样，只有行动，才能解除你所有的不安，那年我在离家的时候一个劲地往自己的硬盘里塞《灌篮高手》，我妈一副嗤之以鼻的表情看着我...... </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/20">随笔</a></li>
+	                                        <li class="timer">2018-03-16</li>
+	                    <li class="view"><span>504</span> </li>
+	                    <li class="comment">13</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/59">博客安装文档（Mamba Blog）</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/59" title=""><img src="https://upload-images.jianshu.io/upload_images/6673460-3ff3d74a5fac1c54.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">基于Laravel开发，支持markdown语法，文章评论，文章回复，回复邮件通知，文章标签，文章管理，文件上传，自定义导航，系统设置，友情链接，后台管理等功能... </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-03-14</li>
+	                    <li class="view"><span>1022</span> </li>
+	                    <li class="comment">23</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/58">PHP + Swoole 简单聊天室</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/58" title=""><img src="https://upload-images.jianshu.io/upload_images/6673460-2326bb392428d52f.png" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">Chatroom PHP + Swoole 开发的简单聊天室demo, 主要是 websockt 的应用 。  </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/17">PHP</a></li>
+	                                        <li class="timer">2018-03-14</li>
+	                    <li class="view"><span>769</span> </li>
+	                    <li class="comment">6</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/57">Linux 格式化和挂载数据盘</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/57" title=""><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=8fa01075252eb938ec6d7df4ed59e208/3812b31bb051f8195d5f10ded0b44aed2e73e728.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">一般购买ECS服务器都会有个系统盘，如果系统盘容量不够的话，需要在ECS实例配置数据盘来保存数据，如果已经为 ECS 实例配了数据盘，需要先格式化数据盘并挂载文件系统后才能正常使用数据盘...... </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-02-28</li>
+	                    <li class="view"><span>236</span> </li>
+	                    <li class="comment">1</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/56">制作QQ微信支付宝三合一收款码</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/56" title=""><img src="https://upload-images.jianshu.io/upload_images/6673460-a9d743b64b6c7e3b.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">通过自建一个网址，通过二维码生成扫描这个网址后，判断浏览器的UA，来分发不同的收款码  大致的流程则为： 客户端扫码 -&gt; 服务端根据 User-Agent 判断客户端类型 -&gt; 分别返回不同的处理 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-02-24</li>
+	                    <li class="view"><span>895</span> </li>
+	                    <li class="comment">9</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/55">CSS基础面试题（附答案）</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/55" title=""><img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=a96313bb9ceef01f49141fc7d0fc99e0/9e3df8dcd100baa1d0fded644f10b912c9fc2e1f.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？ 标准盒子模型：宽度=内容的宽度，用来控制元素的盒子模型的解析模式，默认为content-box context-box：W3C的标准盒子模型...... </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/16">前端</a></li>
+	                                        <li class="timer">2018-02-23</li>
+	                    <li class="view"><span>163</span> </li>
+	                    <li class="comment">3</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/54">Laravel 虚拟开发环境 Homestead</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/54" title=""><img src="http://www.homestead.com/images/hslogo-tagline.png" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">Laravel Homestead 是一个官方预封装的 Vagrant box，它为你提供了一个完美的开发环境，你无需在本地安装 PHP ，web 服务器，或其他服务软件。Vagrant box 是完全一次性的，你不用担心系统被搞乱！如果有什么地方出错了，你可以在几分钟内销毁并重建 box ！... </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-01-29</li>
+	                    <li class="view"><span>163</span> </li>
+	                    <li class="comment">0</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/53">Apache配置支持HTTPS的SSL证书</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/53" title=""><img src="http://www.apache.org/img/asf_logo.png" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">免费SSL证书现在已经差不多是&ldquo;习以为常&rdquo;了，几年前购买一个SSL证书成本是相当高昂的，而使用SSL证书的网站则一般会被路人和搜索引擎&ldquo;高看一眼&rdquo;。现在免费SSL也是非常流行了，常见的主要有：Let&rsquo;s Encrypt、StartSSL、CloudFlare SSL、沃通免费SSL等等。 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-01-22</li>
+	                    <li class="view"><span>110</span> </li>
+	                    <li class="comment">0</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/52">Laravel 通过服务提供者来自定义分页样式</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/52" title=""><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=8fa01075252eb938ec6d7df4ed59e208/3812b31bb051f8195d5f10ded0b44aed2e73e728.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">修改Laravel 默认分页的样式，Laravel自带的分页链接样式由Illuminate\Pagination\BootstrapThreePresenter的render方法生成,我们在此方法上做文章即可实现 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/17">PHP</a></li>
+	                                        <li class="timer">2018-01-21</li>
+	                    <li class="view"><span>192</span> </li>
+	                    <li class="comment">0</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/51">Laravel中使用 Editor.md 上传图片如何处理？</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/51" title=""><img src="http://assets.jq22.com/plugin/2017-10-13-11-29-43.png" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">最近在自己新建的博客后台中使用Editor.md作为发布文章的编辑器，后来在做上传图片的时候遇到了一些难题，就是提交的表单中没有Token，无法通过Laravel的VerifyCsrfToken中间件检查。本文将讲解如何解决这个问题。 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-01-16</li>
+	                    <li class="view"><span>302</span> </li>
+	                    <li class="comment">3</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/50">MYSQL实现Oracle的Start with&hellip;Connect By递归树查询</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/50" title=""><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=e35e494a6159252da3171a020ca06406/ac6eddc451da81cb037c289d5366d016082431c3.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">因项目迁移，使用的数据库也需要从Oracle迁移到MySQL 其中有个功能使用到了Oracle的Start with&hellip;Connect By递归树查询，而MySQL中没有此函数，但可以通过自定义函数的方式来解决这个问题。 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/15">后端</a></li>
+	                                        <li class="timer">2018-01-05</li>
+	                    <li class="view"><span>189</span> </li>
+	                    <li class="comment">0</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/49">告别2017！</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/49" title=""><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=373c413536f33a879e6d071cfe677705/34fae6cd7b899e51edb6f8114ea7d933c8950dff.jpg" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">用一句话来总结2017年：&ldquo;依旧在折腾&rdquo;！在这一年中呢，也是收获不少，少了舍友的陪伴，多了同事之间的交流，新的生活环境，工作环境也会改变人的一部分，人总是要往前看，努力奋斗，继续折腾的嘛！ </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/20">随笔</a></li>
+	                                        <li class="timer">2017-12-31</li>
+	                    <li class="view"><span>792</span> </li>
+	                    <li class="comment">2</li>
+	                </ul>
+	            </div>
+	        </div>
+            <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
+	            <h3 class="blogtitle"><a href="http://blog.kesixin.xin/article/48">科比球衣退役 | 8 VS 24</a></h3>
+	            <span class="blogpic"><a href="http://blog.kesixin.xin/article/48" title=""><img src="http://blog.kesixin.xin/uploads/avatar/e559dc98c345ad1e0875d2807490e6fe.png" style="height: 120px;" alt=""></a></span>
+	            <p class="blogtext">2017年12月19日，科比 - 布莱恩特球衣退役 | 8 VS 24，&quot; 每个人都有自己的梦想，这个梦想可能永远都实现不了，但你为实现这个梦想所走的每一步，才是这个梦想真正的意义所在。Mamba Out &quot;。 </p>
+	            <div class="bloginfo">
+	                <ul>
+	                    <li class="author"><a>Mamba</a></li>
+	                                        <li class="lmname"><a href="http://blog.kesixin.xin/category/20">随笔</a></li>
+	                                        <li class="timer">2017-12-19</li>
+	                    <li class="view"><span>242</span> </li>
+	                    <li class="comment">0</li>
+	                </ul>
+	            </div>
+	        </div>
+        	<ul class="pagination">
+        		<li class="disabled"><span>&laquo;</span></li> 
+        		<li class="active"><span>1</span></li>
+        		<li><a href="http://blog.kesixin.xin?page=2">2</a></li>
+        		<li><a href="http://blog.kesixin.xin?page=3">3</a></li>
+        		<li><a href="http://blog.kesixin.xin?page=4">4</a></li>
+        		<li><a href="http://blog.kesixin.xin?page=2" rel="next">&raquo;</a></li>
+        	</ul>
+    	</div>
+    	<div class="sidebar">
+        	<div class="tuijian">
+    
+	        	<h2 class="hometitle">点击排行</h2>
+				<ul class="sidenews">
+	                <li>
+	                	<i><img src="https://upload-images.jianshu.io/upload_images/6673460-3ff3d74a5fac1c54.jpg" style="width:100%;"></i>
+	        			<p><a href="http://blog.kesixin.xin/article/59">博客安装文档（Mamba Blog）...</a></p>
+	        			<span>2018-03-14</span>
+	        		</li>
+	                <li>
+	                	<i><img src="https://upload-images.jianshu.io/upload_images/6673460-a9d743b64b6c7e3b.jpg" style="width:100%;"></i>
+	        			<p><a href="http://blog.kesixin.xin/article/56">制作QQ微信支付宝三合一收款码...</a></p>
+	        			<span>2018-02-24</span>
+	        		</li>
+	                <li>
+	                	<i><img src="https://upload-images.jianshu.io/upload_images/6673460-3a67ea892505a697.png" style="width:100%;"></i>
+	        			<p><a href="http://blog.kesixin.xin/article/61">Git 速查表</a></p>
+	        			<span>2018-03-30</span>
+	        		</li>
+	                <li>
+	                	<i><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=44ca535a39adcbef01347900949449e0/aec379310a55b3197face8eb4ba98226cefc17d2.jpg" style="width:100%;"></i>
+	        			<p><a href="http://blog.kesixin.xin/article/7">阿里云ECS服务器Linux环境下配置p...</a></p>
+	        			<span>2017-06-06</span>
+	        		</li>
+	                <li>
+	                	<i><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=373c413536f33a879e6d071cfe677705/34fae6cd7b899e51edb6f8114ea7d933c8950dff.jpg" style="width:100%;"></i>
+	        			<p><a href="http://blog.kesixin.xin/article/49">告别2017！</a></p>
+	        			<span>2017-12-31</span>
+	        		</li>
+	        	</ul>
+			</div>
+	        <div class="cloud">
+	    		<h2 class="hometitle">标签云</h2>
+				<ul>
+	                <a href="http://blog.kesixin.xin/tag/2">Php</a>
+	                <a href="http://blog.kesixin.xin/tag/7">Mysql</a>
+	                <a href="http://blog.kesixin.xin/tag/6">Linux</a>
+	                <a href="http://blog.kesixin.xin/tag/5">Git</a>
+	                <a href="http://blog.kesixin.xin/tag/8">Uploadify </a>
+	                <a href="http://blog.kesixin.xin/tag/9">PhpStorm</a>
+	                <a href="http://blog.kesixin.xin/tag/10">Javascript</a>
+	                <a href="http://blog.kesixin.xin/tag/11">科比</a>
+	                <a href="http://blog.kesixin.xin/tag/12">Laravel Debugbar</a>
+	                <a href="http://blog.kesixin.xin/tag/13">Homestead</a>
+	                <a href="http://blog.kesixin.xin/tag/14">Laravel</a>
+	                <a href="http://blog.kesixin.xin/tag/15">elasticsearch</a>
+	                <a href="http://blog.kesixin.xin/tag/16">Apache</a>
+	                <a href="http://blog.kesixin.xin/tag/17">Angularjs</a>
+	                <a href="http://blog.kesixin.xin/tag/18">CentOS</a>
+	                <a href="http://blog.kesixin.xin/tag/19">Jekyll</a>
+	                <a href="http://blog.kesixin.xin/tag/20">WordPress</a>
+	                <a href="http://blog.kesixin.xin/tag/21">ThinkPHP</a>
+	                <a href="http://blog.kesixin.xin/tag/22">Github</a>
+	                <a href="http://blog.kesixin.xin/tag/23">Cropper</a>
+	                <a href="http://blog.kesixin.xin/tag/24">随笔</a>
+	                <a href="http://blog.kesixin.xin/tag/25">Editor.md</a>
+	                <a href="http://blog.kesixin.xin/tag/26">SSL</a>
+	                <a href="http://blog.kesixin.xin/tag/27">Css</a>
+	                <a href="http://blog.kesixin.xin/tag/28">收款码</a>
+	                <a href="http://blog.kesixin.xin/tag/29">转载</a>
+	            </ul>
+			</div>
+	        <div class="links">
+	    		<h2 class="hometitle">友情链接</h2>
+	        	<ul>
+		        	<li><a href="http://www.yangqq.com/" target="_blank">杨青博客</a></li>
+	                <li><a href="http://blog.itmyhome.com/" target="_blank">麦田技术博客</a></li>
+	                <li><a href="https://www.jianshu.com/u/e5bcc7954942" target="_blank">老王简书</a></li>
+	                <li><a href="https://www.jianshu.com/users/560410f0974c/timeline" target="_blank">顽强的兜兜君简书</a></li>
+	                <li><a href="https://www.jianshu.com/users/e39d27793aef/timeline" target="_blank">顺顺顺_637a简书</a></li>
+	                <li><a href="https://www.jianshu.com/u/048ce41bacb1" target="_blank">老铁简书</a></li>
+	                <li><a href="http://blog.csdn.net/webtoy" target="_blank">Hx_toy CSDN</a></li>
+	            </ul>
+			</div>
+	        <div class="guanzhu" id="float">
+	            <h2 class="hometitle">关注</h2>
+	    		<ul>
+	                <li class="wx"><img src="http://blog.kesixin.xin/uploads/avatar/e559dc98c345ad1e0875d2807490e6fe.png"></li>
+	                <li class="tencent"><a href="https://github.com/kesixin" target="_blank"><span>GitHub</span>Mamba</a></li>
+	                <li class="qq"><a><span>QQ号</span>462369233</a></li>
+	            </ul>
+			</div>
+		</div>
+	</article>
+	<footer>
+	    <p>Powered by
+	        <a>Mamba Blog</a>
+	                    <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备17112246号 </a>
+	                &nbsp;
+	        <script type="text/javascript">
+	                        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	                        document.write(unescape("%3Cspan id='cnzz_stat_icon_1264398044'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1264398044%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+						</script>
+	    </p>
+	</footer>
+	<a href="#" class="cd-top">Top</a>
+	<script src="js/jQuery-2.2.0.min.js"></script>
+	<script src="js/scrollReveal.js"></script>
+	<script src="js/nav.js"></script>
 </body>
 </html>
